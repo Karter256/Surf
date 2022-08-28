@@ -29,6 +29,12 @@ p{
     margin: 0;
 }
 
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 
 h1,h2,h3,h4,h5,h6{
     margin: 0;
@@ -49,6 +55,7 @@ h1,h2,h3,h4,h5,h6{
     background-repeat: no-repeat;
     min-height: 100vh;
     background-position: center;
+    margin-bottom: 80px;
     
 }
 
@@ -175,4 +182,111 @@ margin-bottom: 20px;
     font-size: 32px;
     line-height: 39px;
     font-style: italic;
+}
+/* _________________________________info__________________________________ */
+
+
+.info {
+    background-image: url(../images/info-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    position: relative;
+    margin-top: 90px;
+
+}
+
+.info::before{
+    content: '';
+    position: absolute;
+    height: 130px;
+    background-color: var(--primary-color);
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-120px);
+    z-index: 1;
+}
+
+.info__top {
+    display: flex;
+    gap: 80px;
+    padding-top: 100px;
+    margin-bottom: 65vh;
+}
+
+.info__top-text {
+    padding-top: 245px;
+    max-width: 290px;
+    color: var(--background-color);
+    position: relative;
+}
+
+.info__top-text--one{
+padding-bottom: 125px;
+}
+
+.info__top-text--two{
+    border-bottom: 1px solid var(--background-color);
+
+}
+
+.info__btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.popup-btn {
+    text-align: center;
+    cursor: pointer;
+    border:none ;
+    background-color: transparent;
+}
+
+.popup-btn  span{
+    padding-top: 12px;
+    display: block;
+    color: var(--background-color);
+}
+
+
+.info__top-img {
+    position: relative;
+    top: 0;
+    z-index: 6;
+}
+
+.info__specs {
+    display: flex;
+    align-items: center;
+    gap: 130px;
+    color: var(--background-color);
+    padding-bottom: 50px;
+}
+
+.info__specs-title {
+    text-transform: uppercase;
+    font-family: 'Comfortaa', cursive;
+    font-size: 60px;
+    line-height: 67px;
+    max-width: 250px;
+}
+
+.info__specs-list {
+    border-top: 1px solid var(--background-color);
+    border-bottom: 1px solid var(--background-color);
+    padding: 30px 0;
+    max-width: 565px;
+    font-weight: 700;
+}
+
+.info__specs-item {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 25px;
+}
+
+.info__specs-caption {
+    width: 185px;
 }
