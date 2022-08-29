@@ -130,11 +130,11 @@ img{
 }
 
 .header__content{
-    min-height: calc(100vh - 161px);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     position: relative;
+    min-height: calc(100vh - 161px);
 }
 
 .header__content-box{
@@ -152,9 +152,9 @@ img{
 }
 
 .header__text{
-font-size: 24px;
-line-height: 27px;
-margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 27px;
+    margin-bottom: 20px;
 }
 
 .header__decor-text{
@@ -228,7 +228,7 @@ margin-bottom: 20px;
 
 .info__top-text {
     padding-top: 245px;
-    width: 290px;
+    max-width: 290px;
     color: var(--background-color);
     position: relative;
 }
@@ -243,12 +243,12 @@ padding-bottom: 125px;
 }
 
 .info__btn {
+    position: absolute;
     bottom: 0;
     right: 0;
 }
 
 .popup-btn {
-    position: absolute;
     text-align: center;
     cursor: pointer;
     border:none ;
@@ -259,27 +259,8 @@ padding-bottom: 125px;
     padding-top: 12px;
     display: block;
     color: var(--background-color);
-    transition: color 0.3s;
 }
 
-.popup-btn path,
-.popup-btn circle{
-    transition: all 0.3s;
-}
-
-
-
-.popup-btn:hover path{
-    fill: var(--hover-color);
-}
-.popup-btn:hover circle{
-    stroke: var(--hover-color);
-}
-
-
-.popup-btn:hover  span{
-    color: var(--accent-color);
-}
 
 .info__top-img {
     position: relative;
@@ -296,6 +277,10 @@ padding-bottom: 125px;
 }
 
 .info__specs-title {
+    text-transform: uppercase;
+    font-family: 'Comfortaa', cursive;
+    font-size: 60px;
+    line-height: 67px;
     max-width: 250px;
 }
 
@@ -303,7 +288,7 @@ padding-bottom: 125px;
     border-top: 1px solid var(--background-color);
     border-bottom: 1px solid var(--background-color);
     padding: 30px 0;
-    width: 565px;
+    max-width: 565px;
     font-weight: 700;
 }
 
@@ -327,7 +312,7 @@ padding-bottom: 125px;
     gap: 90px;
 }
 .buy__content {
-    flex-basis: 510px;
+    width: 510px;
     position: relative;
 }
 .buy__title {
@@ -441,7 +426,7 @@ margin-bottom: 150px;
 
 }
 
-.gallery_box {
+.gallery__box {
     display: flex;
     gap: 68px;
     margin-top: 115px;
@@ -613,13 +598,81 @@ margin-bottom: 150px;
 
 /* ______________________________Media Queries_____________________________ */
 
+/* _________________________________1230____________________________________ */
+@media (max-width:1230px){
+    .buy__inner{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .buy__img{
+        order: -1;
+        max-width: 100%;
+
+    }
+
+    .buy__content{
+        width: 100%;
+    }
+
+    .buy__price{
+        pointer-events: none;
+    }
+
+    .buy__item{
+        width: 100%;
+        max-width: 600px;
+    }
+    .gallery-max{
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: auto auto auto;
+        width: 100%;
+    }
+
+    .gallery-max__img{
+        width: 100%;
+        align-self: stretch;
+    }
+
+    .footer__gallery-item{
+        width: 100%;
+        align-self: stretch;
+    }
+}
 
 /* _________________________________1200____________________________________ */
-@media (max-width:1230px){
+@media (max-width:1200px){
     .header__decor-text--two{
         left: 0;
     }
+
+    .gallery-min{
+        margin-top: 0;
+    }
 }
+
+/* _________________________________1175____________________________________ */
+@media (max-width:1175px){
+ .gallery__box{
+    flex-wrap: wrap;
+ }   
+ .gallery-min{
+    margin-top: 0;
+ }
+ .gallery__text{
+    width: 100%;
+ }
+ .gallery-min__img{
+    width: 100%;
+    align-self: stretch;
+}
+
+.gallery-min{
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+}
+}
+
 /* _________________________________1000____________________________________ */
 
 @media (max-width:1000px){
@@ -642,8 +695,59 @@ margin-bottom: 150px;
     margin: 0 auto;
 }
 
+.info__specs{
+    display: block;
 }
 
+.footer__top{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer__logo{
+    order: -1;
+    margin: 0 auto 50px;
+    display: inline-block;
+}
+
+.footer__gallery{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.footer_menu-list{
+    display: block;
+    text-align: center;
+}
+.footer__menu-item{
+    padding: 15px 0;
+}
+
+.footer__social-title{
+    text-align: center;
+}
+
+}
+
+
+/* _________________________________840____________________________________ */
+
+@media (max-width:840px){
+    .buy__price{
+        bottom: auto;
+        top:-350px;
+    }
+
+    .gallery-min{
+        margin-bottom: 50px;
+    }
+
+    .gallery-max__text{
+        font-size: 18px;
+        line-height: 20px;
+    }
+}
 
 /* _________________________________720____________________________________ */
 
@@ -652,6 +756,20 @@ margin-bottom: 150px;
         flex-wrap: wrap;
         justify-content: center;
         gap:30px 90px;
+    }
+
+    .header{
+
+        margin-bottom: 0;
+
+    }
+
+    .info{
+        margin-top: 0;
+    }
+
+    .info__top{
+        padding-top: 100px;
     }
 
     .header__btn{
@@ -663,6 +781,11 @@ margin-bottom: 150px;
     }
     .header__content{
         z-index: 5;
+    }
+
+    .tech__btn{
+    margin-top: 360px;
+    margin-left: 175px;
     }
 
 }
@@ -685,7 +808,30 @@ margin-bottom: 150px;
     display: block;
 }
 
+.title{
+    font-size:48px;
+    line-height: 56px;
 }
+
+.gallery-min{
+    padding: 20px 10px 20px;
+}
+
+}
+
+
+/* _________________________________500____________________________________ */
+@media (max-width:500px){
+    .buy__price{
+        width: 170px;
+        height: 168px;
+        background-size: cover;
+        top: -185px;
+    }
+
+}
+
+
 
 
 /* _________________________________414____________________________________ */
@@ -695,6 +841,28 @@ margin-bottom: 150px;
         display: none;
     }
 
+    .gallery-min::before{
+        display: none;
+    }
+
+    .gallery-min,
+    .gallery-max{
+        gap: 10px;
+    }
+
+    .tech__title{
+        font-size: 32px;
+        line-height: 36px;
+    }
+
+    .footer__title{
+        font-size: 34px;
+        line-height: 38px;
+    }
+
+    .footer__logo svg{
+        width: 90%;
+    }
 }
 
 
